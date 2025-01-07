@@ -1,0 +1,79 @@
+/*!
+    @page lwip_FreeRTOS_S32G399A_M7_group lwIP TCP/IP stack
+    @brief Basic application that presents the lwIP usage with S32G399A RTD
+
+    ## Application description ##
+    _____
+    The purpose of this demo is to provide the user with an out-of-the box
+    example application for S32G399A platform, using S32 RTD.
+    The demo uses lwIP stack and supports more scenarios, which can be enabled
+    or disabled on <b>Applications</b>, by modifying the \b lwipcfg.h file located in \b generate\include\.
+
+    Basic functionality can be checked by pinging the board from the host PC:
+        ping 192.168.0.200
+
+    Please note that a prior setting of the IP on your PC might be needed. On Windows, this can be done from:
+
+    <b>Control Panel</b> > <b>Network and Internet</b> > <b>Network and Sharing Center</b> > <b>Change adapter settings</b> > <b>Network adapter that connects to the board</b>
+
+    Select <b>Internet Protocol Version 4</b> and click <b>Properties</b>; select <b>Use the following IP address</b> and configure the IP address and subnet mask.
+    Configuration example: IP - 192.168.0.10, subnet mask - 255.255.255.0.
+
+    For more information about supported application, you can see the "TCPIP_USER_MANUAL.pdf" that is contained by this package, located on "S32DS/software/PlatformSDK_S32XX_4_0_0/stacks/tcpip/doc".
+    
+    ## Prerequisites ##
+    _____
+    To run the example you will need to have the following items:
+    - S32G-PROCEVB-S
+    - 1 Power adapter for the board
+    - S32 Debugger
+    - Ethernet cable(s)
+
+    ## Boards supported ##
+    _____
+    The following boards are supported by this application:
+    - S32G-PROCEVB-S PCB RevX3 SCH RevB1 (Daughter Board)
+    - Silicon: P32G399AACVUC SBAU2235 1P72B TIAUSBA
+
+    ## Hardware Wiring ##
+    _____
+    The Ethernet cable must be connected between the RGMII port (J108) of the board and the Ethernet port of the PC.
+
+    ## How to run ##
+    ______
+    #### 1. Importing the project into the workspace ####
+    After opening S32 Design Studio, go to \b File -> \b New \b S32DS \b Project \b From... and select \b lwip_FreeRTOS_S32G399A_M7. Then click on \b Finish. \n
+    The project should now be copied into you current workspace.
+    #### 2. Generating the S32 configuration ####
+    The example will run without an active configuration, however if any changes are required, a configuration needs to be generated.
+    The initial configuration will have the same settings as the default example settings.
+    First go to \b Project \b Explorer View in S32 DS and select the current project(\b lwip_FreeRTOS_S32G399A_M7).
+    Select the "S32 Configuration Tool" menu then click on the desired configuration (Pins, Cocks, Peripherals etc...). Clicking on any one of those will generate all the components.
+    Make the desired changes(if any) then click on the "S32 Configuration Tool->Update Code" button.
+    #### 3. Building the project ####
+    Select the configuration to be built \b RAM (Debug_RAM) by left clicking on the downward arrow corresponding to the \b build button(@image hammer.png).
+    Wait for the build action to be completed before continuing to the next step.
+    #### 4. Running the project ####
+    Go to \b Run and select \b Debug \b Configurations. There will be a debug configuration for this project:
+     Configuration Name | Description
+     -------------------|------------
+     \b lwip_FreeRTOS_S32G399A_M7_debug_ram_s32debugger | Debug the RAM configuration using S32 Debugger
+
+    \n Select the desired debug configuration and click on \b Launch. Now the perspective will change to the \b Debug \b Perspective. \n
+    Use the controls to control the program flow.
+
+    #### 5. Expected results ####
+
+    After executing "ping 192.168.0.200" cmd, command windows will display :
+        Pinging 192.168.0.200 with 32 bytes of data:
+        Reply from 192.168.0.200: bytes=32 time<1ms TTL=255
+        Reply from 192.168.0.200: bytes=32 time<1ms TTL=255
+        Reply from 192.168.0.200: bytes=32 time<1ms TTL=255
+        Reply from 192.168.0.200: bytes=32 time<1ms TTL=255
+        Ping statistics for 192.168.0.200:
+        Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+        Approximate round trip times in milli-seconds:
+        Minimum = 0ms, Maximum = 0ms, Average = 0ms
+
+    @note For more detailed information related to S32 Design Studio usage please consult the available documentation.
+*/
