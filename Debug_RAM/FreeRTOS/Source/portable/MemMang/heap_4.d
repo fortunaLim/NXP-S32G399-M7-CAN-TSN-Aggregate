@@ -1,7 +1,7 @@
 FreeRTOS/Source/portable/MemMang/heap_4.o: \
  ../FreeRTOS/Source/portable/MemMang/heap_4.c \
  ../FreeRTOS/Source/include/FreeRTOS.h \
- C:/Users/sh970/workspaceS32DS.3.5/lwip_FreeRTOS_S32G399A_M7/generate/include/FreeRTOSConfig.h \
+ C:/Users/sh970/workspace_paper/lwip_FreeRTOS_S32G399A_M7_hw_ver/generate/include/FreeRTOSConfig.h \
  ../FreeRTOS/Source/include/projdefs.h \
  ../FreeRTOS/Source/include/portable.h \
  ../FreeRTOS/Source/include/deprecated_definitions.h \
@@ -11,7 +11,7 @@ FreeRTOS/Source/portable/MemMang/heap_4.o: \
 
 ../FreeRTOS/Source/include/FreeRTOS.h:
 
-C:/Users/sh970/workspaceS32DS.3.5/lwip_FreeRTOS_S32G399A_M7/generate/include/FreeRTOSConfig.h:
+C:/Users/sh970/workspace_paper/lwip_FreeRTOS_S32G399A_M7_hw_ver/generate/include/FreeRTOSConfig.h:
 
 ../FreeRTOS/Source/include/projdefs.h:
 

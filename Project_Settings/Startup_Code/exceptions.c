@@ -103,7 +103,8 @@ void NMI_Handler(void)
 }
 void HardFault_Handler(void)
 {
-    while(TRUE){};
+
+	while(TRUE){};
 }
 void MemManage_Handler(void)
 {

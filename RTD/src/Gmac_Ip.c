@@ -224,8 +224,7 @@ extern "C"{
 
 /*! @brief Pointers to GMAC internal driver state for each Instance. */
 Gmac_Ip_StateType *Gmac_apxState[FEATURE_GMAC_NUM_INSTANCES] = {NULL_PTR};
-uint32 status_monitor_send;
-uint32 status_monitor_buff;
+
 
 #define ETH_STOP_SEC_VAR_CLEARED_UNSPECIFIED
 #include "Eth_MemMap.h"
@@ -238,6 +237,8 @@ uint32 status_monitor_buff;
 
 static uint32 Gmac_Ip_ComputeCRC32(const uint8 *Mac, uint8 Size);
 
+static Gmac_Ip_StatusType Gmac_Ip_InitDMA(uint8 Instance,
+                                          const Gmac_CtrlConfigType *Config);
 static void Gmac_Ip_InitStateStructure(uint8 Instance,
                                        const Gmac_CtrlConfigType *Config);
 static void Gmac_Ip_InitTxBD(uint8 Instance,
@@ -394,7 +395,7 @@ static void Gmac_Ip_ReadTimeStampInfo(uint8 Instance,
  *                 fields instead of just two.
  *
  *END**************************************************************************/
-Gmac_Ip_StatusType Gmac_Ip_InitDMA(uint8 Instance,
+static Gmac_Ip_StatusType Gmac_Ip_InitDMA(uint8 Instance,
                                           const Gmac_CtrlConfigType *Config)
 {
     GMAC_Type *Base;
@@ -1371,7 +1372,6 @@ Gmac_Ip_StatusType Gmac_Ip_GetTxBuff(uint8 Instance,
         ((Bd->Info1 & GMAC_INFO1_LOCKED_MASK) != 0U))
     {
         Status = GMAC_STATUS_TX_BUFF_BUSY;
-        status_monitor_buff = Status;
     }
     else
     {
@@ -1410,7 +1410,6 @@ Gmac_Ip_StatusType Gmac_Ip_GetTxBuff(uint8 Instance,
  * Description   : Sends an Ethernet frame
  * implements     Gmac_Ip_SendFrame_Activity
  *END**************************************************************************/
-
 Gmac_Ip_StatusType Gmac_Ip_SendFrame(uint8 Instance,
                                      uint8 Ring,
                                      const Gmac_Ip_BufferType * Buff,
@@ -1434,8 +1433,6 @@ Gmac_Ip_StatusType Gmac_Ip_SendFrame(uint8 Instance,
     if ((Bd->Des3 & GMAC_TDES3_OWN_MASK) != 0U)
     {
         Status = GMAC_STATUS_TX_QUEUE_FULL;
-        status_monitor_send = Status;
-        //for(;;){}
     }
     else
     {
@@ -1558,6 +1555,7 @@ Gmac_Ip_StatusType Gmac_Ip_ReadFrame(uint8 Instance,
             Gmac_apxState[Instance]->RxCurrentDesc[Ring] = ListBd;
         }
     }
+
     return Status;
 }
 

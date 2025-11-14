@@ -169,6 +169,8 @@
                         <pin_feature name="outputBuffer" value="disabled"/>
                      </pin_features>
                   </pin>
+                  <pin peripheral="CAN_1" signal="txd" pin_num="C6" pin_signal="PB_03"/>
+                  <pin peripheral="CAN_1" signal="rxd" pin_num="E8" pin_signal="PB_04"/>
                </pins>
             </function>
          </functions_list>
@@ -970,16 +972,6 @@
       </gtm>
       <periphs name="Peripherals" version="14.0" enabled="true" update_project_code="true">
          <dependencies>
-            <dependency resourceType="SWComponent" resourceId="platform.driver.cache" description="cache is not found in the toolchain/IDE project. The project will not compile!" problem_level="2" source="Peripherals">
-               <feature name="enabled" evaluation="equal">
-                  <data type="Boolean">true</data>
-               </feature>
-            </dependency>
-            <dependency resourceType="SWComponent" resourceId="platform.driver.cache" description="An unsupported version of the cache in the toolchain/IDE project. Required: ${required_value}, actual: ${actual_value}. The project might not compile correctly." problem_level="1" source="Peripherals">
-               <feature name="version" evaluation="equivalent">
-                  <data type="Version">1.0.0</data>
-               </feature>
-            </dependency>
             <dependency resourceType="SWComponent" resourceId="platform.driver.IntCtrl_Ip" description="IntCtrl_Ip is not found in the toolchain/IDE project. The project will not compile!" problem_level="2" source="Peripherals">
                <feature name="enabled" evaluation="equal">
                   <data type="Boolean">true</data>
@@ -1077,8 +1069,6 @@
             </dependency>
          </dependencies>
          <generated_project_files>
-            <file path="generate/include/Cache_Ip_Cfg_Defines.h" update_enabled="true"/>
-            <file path="generate/include/Cache_Ip_Cfg_DeviceRegisters.h" update_enabled="true"/>
             <file path="generate/include/Clock_Ip_Cfg.h" update_enabled="true"/>
             <file path="generate/include/Clock_Ip_Cfg_Defines.h" update_enabled="true"/>
             <file path="generate/include/Clock_Ip_PBcfg.h" update_enabled="true"/>
@@ -1144,7 +1134,7 @@
                <options/>
                <dependencies/>
                <instances>
-                  <instance name="Cache_Ip" uuid="b7aaed09-d787-45e6-9ffc-7be1d48754bf" type="Cache_Ip" type_id="Cache_Ip" mode="general" enabled="true" comment="" custom_name_enabled="false" editing_lock="false">
+                  <instance name="Cache_Ip" uuid="b7aaed09-d787-45e6-9ffc-7be1d48754bf" type="Cache_Ip" type_id="Cache_Ip" mode="general" enabled="false" comment="" custom_name_enabled="false" editing_lock="false">
                      <config_set name="Cache_Ip">
                         <setting name="Name" value="Cache"/>
                         <struct name="ConfigTimeSupport">
@@ -1156,7 +1146,7 @@
                            <setting name="MclEnableUserModeSupport" value="false"/>
                            <struct name="MclCache">
                               <setting name="Name" value="MclCache"/>
-                              <setting name="MclEnableCache" value="true"/>
+                              <setting name="MclEnableCache" value="false"/>
                               <setting name="MclEnableCacheDevErrorDetect" value="false"/>
                            </struct>
                         </struct>
@@ -1442,7 +1432,7 @@
                                     <setting name="IsrName" value="CAN0_ORED_IRQn"/>
                                     <setting name="IsrEnabled" value="true"/>
                                     <setting name="IsrPriority" value="0"/>
-                                    <setting name="IsrHandler" value="undefined_handler"/>
+                                    <setting name="IsrHandler" value="CAN0_ORED_IRQHandler"/>
                                  </struct>
                                  <struct name="38">
                                     <setting name="Name" value="PlatformIsrConfig_38"/>
@@ -1468,28 +1458,28 @@
                                  <struct name="41">
                                     <setting name="Name" value="PlatformIsrConfig_41"/>
                                     <setting name="IsrName" value="CAN1_ORED_IRQn"/>
-                                    <setting name="IsrEnabled" value="false"/>
+                                    <setting name="IsrEnabled" value="true"/>
                                     <setting name="IsrPriority" value="0"/>
-                                    <setting name="IsrHandler" value="undefined_handler"/>
+                                    <setting name="IsrHandler" value="CAN1_ORED_IRQHandler"/>
                                  </struct>
                                  <struct name="42">
                                     <setting name="Name" value="PlatformIsrConfig_42"/>
                                     <setting name="IsrName" value="CAN1_ERR_IRQn"/>
-                                    <setting name="IsrEnabled" value="false"/>
+                                    <setting name="IsrEnabled" value="true"/>
                                     <setting name="IsrPriority" value="0"/>
                                     <setting name="IsrHandler" value="undefined_handler"/>
                                  </struct>
                                  <struct name="43">
                                     <setting name="Name" value="PlatformIsrConfig_43"/>
                                     <setting name="IsrName" value="CAN1_ORED_0_7_MB_IRQn"/>
-                                    <setting name="IsrEnabled" value="false"/>
+                                    <setting name="IsrEnabled" value="true"/>
                                     <setting name="IsrPriority" value="0"/>
-                                    <setting name="IsrHandler" value="undefined_handler"/>
+                                    <setting name="IsrHandler" value="CAN1_ORED_0_7_MB_IRQHandler"/>
                                  </struct>
                                  <struct name="44">
                                     <setting name="Name" value="PlatformIsrConfig_44"/>
                                     <setting name="IsrName" value="CAN1_ORED_8_127_MB_IRQn"/>
-                                    <setting name="IsrEnabled" value="false"/>
+                                    <setting name="IsrEnabled" value="true"/>
                                     <setting name="IsrPriority" value="0"/>
                                     <setting name="IsrHandler" value="undefined_handler"/>
                                  </struct>
@@ -1587,9 +1577,9 @@
                                  <struct name="58">
                                     <setting name="Name" value="PlatformIsrConfig_58"/>
                                     <setting name="IsrName" value="GMAC0_CH0_TX_IRQn"/>
-                                    <setting name="IsrEnabled" value="false"/>
+                                    <setting name="IsrEnabled" value="true"/>
                                     <setting name="IsrPriority" value="0"/>
-                                    <setting name="IsrHandler" value="undefined_handler"/>
+                                    <setting name="IsrHandler" value="GMAC0_CH0_TX_IRQHandler"/>
                                  </struct>
                                  <struct name="59">
                                     <setting name="Name" value="PlatformIsrConfig_59"/>
@@ -1601,9 +1591,9 @@
                                  <struct name="60">
                                     <setting name="Name" value="PlatformIsrConfig_60"/>
                                     <setting name="IsrName" value="GMAC0_CH1_TX_IRQn"/>
-                                    <setting name="IsrEnabled" value="false"/>
+                                    <setting name="IsrEnabled" value="true"/>
                                     <setting name="IsrPriority" value="0"/>
-                                    <setting name="IsrHandler" value="undefined_handler"/>
+                                    <setting name="IsrHandler" value="GMAC0_CH1_TX_IRQHandler"/>
                                  </struct>
                                  <struct name="61">
                                     <setting name="Name" value="PlatformIsrConfig_61"/>
@@ -2937,15 +2927,15 @@
                               <setting name="Name" value="FlexCAN_Config0"/>
                               <setting name="max_num_mb" value="16"/>
                               <setting name="num_id_filters" value="FLEXCAN_RX_FIFO_ID_FILTERS_8"/>
-                              <setting name="is_rx_fifo_needed" value="true"/>
-                              <setting name="fd_enable" value="false"/>
+                              <setting name="is_rx_fifo_needed" value="false"/>
+                              <setting name="fd_enable" value="true"/>
                               <setting name="flexcanMode" value="FLEXCAN_NORMAL_MODE"/>
-                              <setting name="payload" value="FLEXCAN_PAYLOAD_SIZE_8"/>
+                              <setting name="payload" value="FLEXCAN_PAYLOAD_SIZE_64"/>
                               <setting name="transfer_type" value="FLEXCAN_RXFIFO_USING_INTERRUPTS"/>
                               <setting name="rxFifoDMAChannel" value="0"/>
                               <setting name="extCbtEnable" value="false"/>
-                              <setting name="bitRateSwitch" value="false"/>
-                              <setting name="CanControllerFdISO" value="false"/>
+                              <setting name="bitRateSwitch" value="true"/>
+                              <setting name="CanControllerFdISO" value="true"/>
                               <setting name="CanControllerAutoBusOff" value="true"/>
                               <setting name="CanRemoteRequestStore" value="false"/>
                               <setting name="timeStampSurce" value="FLEXCAN_CAN_CLK_TIMESTAMP_SRC"/>
@@ -2958,14 +2948,57 @@
                                  <setting name="flexcan_cfg_phaseSeg1" value="8"/>
                                  <setting name="flexcan_cfg_phaseSeg2" value="5"/>
                                  <setting name="flexcan_cfg_preDivider" value="8"/>
-                                 <setting name="flexcan_cfg_rJumpwidth" value="1"/>
+                                 <setting name="flexcan_cfg_rJumpwidth" value="5"/>
                               </struct>
                               <struct name="flexcan_time_segment_cbt">
                                  <setting name="Name" value="FlexCAN_Ip_TimeSegCBT0"/>
-                                 <setting name="flexcan_cfg_propSeg" value="7"/>
-                                 <setting name="flexcan_cfg_phaseSeg1" value="6"/>
-                                 <setting name="flexcan_cfg_phaseSeg2" value="2"/>
-                                 <setting name="flexcan_cfg_preDivider" value="5"/>
+                                 <setting name="flexcan_cfg_propSeg" value="6"/>
+                                 <setting name="flexcan_cfg_phaseSeg1" value="8"/>
+                                 <setting name="flexcan_cfg_phaseSeg2" value="5"/>
+                                 <setting name="flexcan_cfg_preDivider" value="2"/>
+                                 <setting name="flexcan_cfg_rJumpwidth" value="2"/>
+                              </struct>
+                              <setting name="FlexCanCallback" value="CAN0_Callback_SKKU"/>
+                              <setting name="FlexCanErrorCallback" value="NULL_PTR"/>
+                              <setting name="num_enhanced_std_id_filters" value="0"/>
+                              <setting name="num_enhanced_ext_id_filters" value="0"/>
+                              <setting name="num_enhanced_watermark" value="0"/>
+                              <setting name="is_enhanced_rx_fifo_needed" value="false"/>
+                           </struct>
+                           <struct name="1">
+                              <setting name="CanHwChannel" value="FLEXCAN_1"/>
+                              <setting name="Name" value="FlexCAN_Config1"/>
+                              <setting name="max_num_mb" value="16"/>
+                              <setting name="num_id_filters" value="FLEXCAN_RX_FIFO_ID_FILTERS_8"/>
+                              <setting name="is_rx_fifo_needed" value="false"/>
+                              <setting name="fd_enable" value="true"/>
+                              <setting name="flexcanMode" value="FLEXCAN_NORMAL_MODE"/>
+                              <setting name="payload" value="FLEXCAN_PAYLOAD_SIZE_64"/>
+                              <setting name="transfer_type" value="FLEXCAN_RXFIFO_USING_INTERRUPTS"/>
+                              <setting name="rxFifoDMAChannel" value="0"/>
+                              <setting name="extCbtEnable" value="false"/>
+                              <setting name="bitRateSwitch" value="true"/>
+                              <setting name="CanControllerFdISO" value="true"/>
+                              <setting name="CanControllerAutoBusOff" value="true"/>
+                              <setting name="CanRemoteRequestStore" value="false"/>
+                              <setting name="timeStampSurce" value="FLEXCAN_CAN_CLK_TIMESTAMP_SRC"/>
+                              <setting name="msgBuffTimeStampType" value="FLEXCAN_MSGBUFFTIMESTAMP_TIMER"/>
+                              <setting name="hrConfigType" value="FLEXCAN_TIMESTAMPCAPTURE_DISABLE"/>
+                              <setting name="pe_clock_frequency" value="80000000"/>
+                              <struct name="flexcan_time_segment">
+                                 <setting name="Name" value="FlexCAN_Ip_TimeSeg1"/>
+                                 <setting name="flexcan_cfg_propSeg" value="6"/>
+                                 <setting name="flexcan_cfg_phaseSeg1" value="8"/>
+                                 <setting name="flexcan_cfg_phaseSeg2" value="5"/>
+                                 <setting name="flexcan_cfg_preDivider" value="8"/>
+                                 <setting name="flexcan_cfg_rJumpwidth" value="5"/>
+                              </struct>
+                              <struct name="flexcan_time_segment_cbt">
+                                 <setting name="Name" value="FlexCAN_Ip_TimeSegCBT1"/>
+                                 <setting name="flexcan_cfg_propSeg" value="6"/>
+                                 <setting name="flexcan_cfg_phaseSeg1" value="8"/>
+                                 <setting name="flexcan_cfg_phaseSeg2" value="5"/>
+                                 <setting name="flexcan_cfg_preDivider" value="2"/>
                                  <setting name="flexcan_cfg_rJumpwidth" value="2"/>
                               </struct>
                               <setting name="FlexCanCallback" value="CAN0_Callback_SKKU"/>
@@ -3048,7 +3081,7 @@
                                     <setting name="0" value="ETH_MAC_LAYER_SPEED_1G"/>
                                  </array>
                                  <array name="EthCtrlPhyAddress">
-                                    <setting name="0" value="00:11:22:33:44:55"/>
+                                    <setting name="0" value="00:11:22:33:44:66"/>
                                  </array>
                                  <array name="EthCtrlEcucPartitionRef"/>
                                  <struct name="EthCtrlVendorSpecific">
@@ -3103,8 +3136,8 @@
                                     <array name="EthCtrlConfigEgressFifo">
                                        <struct name="0">
                                           <setting name="Name" value="EthCtrlConfigEgressFifo_0"/>
-                                          <setting name="EthCtrlConfigEgressFifoBufLenByte" value="1456"/>
-                                          <setting name="EthCtrlConfigEgressFifoBufTotal" value="128"/>
+                                          <setting name="EthCtrlConfigEgressFifoBufLenByte" value="1536"/>
+                                          <setting name="EthCtrlConfigEgressFifoBufTotal" value="32"/>
                                           <setting name="EthCtrlConfigEgressFifoIdx" value="0"/>
                                           <setting name="EthCtrlConfigEgressFifoCallback" value="Eth_TxIrqCallback"/>
                                           <array name="EthCtrlConfigEgressFifoPriorityAssignment">
@@ -3113,8 +3146,8 @@
                                        </struct>
                                        <struct name="1">
                                           <setting name="Name" value="EthCtrlConfigEgressFifo_1"/>
-                                          <setting name="EthCtrlConfigEgressFifoBufLenByte" value="1456"/>
-                                          <setting name="EthCtrlConfigEgressFifoBufTotal" value="128"/>
+                                          <setting name="EthCtrlConfigEgressFifoBufLenByte" value="1536"/>
+                                          <setting name="EthCtrlConfigEgressFifoBufTotal" value="16"/>
                                           <setting name="EthCtrlConfigEgressFifoIdx" value="1"/>
                                           <setting name="EthCtrlConfigEgressFifoCallback" value="Eth_TxIrqCallback"/>
                                           <array name="EthCtrlConfigEgressFifoPriorityAssignment">
@@ -3123,8 +3156,8 @@
                                        </struct>
                                        <struct name="2">
                                           <setting name="Name" value="EthCtrlConfigEgressFifo_2"/>
-                                          <setting name="EthCtrlConfigEgressFifoBufLenByte" value="1456"/>
-                                          <setting name="EthCtrlConfigEgressFifoBufTotal" value="128"/>
+                                          <setting name="EthCtrlConfigEgressFifoBufLenByte" value="1536"/>
+                                          <setting name="EthCtrlConfigEgressFifoBufTotal" value="16"/>
                                           <setting name="EthCtrlConfigEgressFifoIdx" value="2"/>
                                           <setting name="EthCtrlConfigEgressFifoCallback" value="Eth_TxIrqCallback"/>
                                           <array name="EthCtrlConfigEgressFifoPriorityAssignment">
@@ -3225,7 +3258,7 @@
                                              </struct>
                                              <struct name="1">
                                                 <setting name="Name" value="EthGateControlList_1"/>
-                                                <setting name="EthCtrlConfigInterval" value="5000000"/>
+                                                <setting name="EthCtrlConfigInterval" value="4000000"/>
                                                 <array name="EthGateControlFifo">
                                                    <struct name="0">
                                                       <setting name="Name" value="EthGateControlFifo_0"/>
@@ -3246,7 +3279,7 @@
                                              </struct>
                                              <struct name="2">
                                                 <setting name="Name" value="EthGateControlList_2"/>
-                                                <setting name="EthCtrlConfigInterval" value="3984000"/>
+                                                <setting name="EthCtrlConfigInterval" value="4000000"/>
                                                 <array name="EthGateControlFifo">
                                                    <struct name="0">
                                                       <setting name="Name" value="EthGateControlFifo_0"/>
@@ -3267,7 +3300,7 @@
                                              </struct>
                                              <struct name="3">
                                                 <setting name="Name" value="EthGateControlList_3"/>
-                                                <setting name="EthCtrlConfigInterval" value="16000"/>
+                                                <setting name="EthCtrlConfigInterval" value="1000000"/>
                                                 <array name="EthGateControlFifo">
                                                    <struct name="0">
                                                       <setting name="Name" value="EthGateControlFifo_0"/>

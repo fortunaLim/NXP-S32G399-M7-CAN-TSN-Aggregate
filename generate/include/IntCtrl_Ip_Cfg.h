@@ -71,8 +71,13 @@ extern const IntCtrl_Ip_CtrlConfigType IntCtrlConfig_0;
 
 /* Declaration of the ISR Handlers */
 extern void undefined_handler(void);
+extern void CAN0_ORED_IRQHandler(void);
 extern void CAN0_ORED_0_7_MB_IRQHandler(void);
+extern void CAN1_ORED_IRQHandler(void);
+extern void CAN1_ORED_0_7_MB_IRQHandler(void);
+extern void GMAC0_CH0_TX_IRQHandler(void);
 extern void GMAC0_CH0_RX_IRQHandler(void);
+extern void GMAC0_CH1_TX_IRQHandler(void);
 extern void GMAC0_CH1_RX_IRQHandler(void);
 
 #define PLATFORM_STOP_SEC_CONFIG_DATA_UNSPECIFIED

@@ -112,9 +112,6 @@ GMAC_CONFIG_EXT
  * @{
  */
 
-Gmac_Ip_StatusType Gmac_Ip_InitDMA(uint8 Instance,
-                                          const Gmac_CtrlConfigType *Config);
-
 /*!
  * @brief Initializes the GMAC module
  *

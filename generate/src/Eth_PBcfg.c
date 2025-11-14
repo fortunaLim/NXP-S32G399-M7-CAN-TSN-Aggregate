@@ -165,7 +165,7 @@ static const Eth_EgressCfgType Eth_aEgressConfigPB[1U] =
 {
     /* The configuration structure for Eth_aEgressConfigPB_[0U] - GMAC_0 */
     {
-        384U,  /* Total number of buffers across all Tx FIFOs */
+        64U,  /* Total number of buffers across all Tx FIFOs */
         3U, /* Total number of configured Tx FIFOs */
         { 0U, 1U, 2U, 0U, 0U, 0U, 0U, 0U } /* Map between VLAN PCPs and Tx FIFOs */
     }

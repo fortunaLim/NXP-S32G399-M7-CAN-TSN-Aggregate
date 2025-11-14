@@ -44,7 +44,7 @@
 /* Each netif configuration */
 netif_custom_t netifCfg_0 = {
     .num         = 0,
-    .hwaddr      = { 0x00, 0x11, 0x22, 0x33, 0x44, 0x55 },
+    .hwaddr      = { 0x00, 0x11, 0x22, 0x33, 0x44, 0x66 },
     .has_dhcp    = false,
     .has_auto_ip = false,
     .has_IPv6    = true,

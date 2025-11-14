@@ -123,6 +123,8 @@ BOARD_InitPins:
   - {pin_num: Y11, peripheral: SIUL2_0, signal: 'gpio, 7', pin_signal: PA_07, direction: OUTPUT}
   - {pin_num: E7, peripheral: CAN_0, signal: txd, pin_signal: PB_01}
   - {pin_num: D7, peripheral: CAN_0, signal: rxd, pin_signal: PB_02, outputBuffer: disabled}
+  - {pin_num: C6, peripheral: CAN_1, signal: txd, pin_signal: PB_03}
+  - {pin_num: E8, peripheral: CAN_1, signal: rxd, pin_signal: PB_04}
  * BE CAREFUL MODIFYING THIS COMMENT - IT IS YAML SETTINGS FOR TOOLS ***********
  */
 /* clang-format on */
@@ -453,6 +455,43 @@ const Siul2_Port_Ip_PinSettingsConfig g_pin_mux_InitConfigArr0[NUM_OF_CONFIGURED
                                        },
         .initValue                   = 2u
     },
+    {
+        .base                        = IP_SIUL2_0,
+        .pinPortIdx                  = 19u,
+        .mux                         = PORT_MUX_ALT2,
+        .safeMode                    = PORT_SAFE_MODE_DISABLED,
+        .pullConfig                  = PORT_INTERNAL_PULL_NOT_ENABLED,
+        .slewRateCtrlSel             = PORT_SLEW_RATE_CONTROL4,
+        .inputBuffer                 = PORT_INPUT_BUFFER_DISABLED,
+        .openDrain                   = PORT_OPEN_DRAIN_DISABLED,
+        .outputBuffer                = PORT_OUTPUT_BUFFER_ENABLED,
+        .initValue                   = 2u
+    },
+    {
+        .base                        = IP_SIUL2_0,
+        .pinPortIdx                  = 20u,
+        .mux                         = PORT_MUX_AS_GPIO,
+        .safeMode                    = PORT_SAFE_MODE_DISABLED,
+        .pullConfig                  = PORT_INTERNAL_PULL_NOT_ENABLED,
+        .slewRateCtrlSel             = PORT_SLEW_RATE_CONTROL4,
+        .inputBuffer                 = PORT_INPUT_BUFFER_ENABLED,
+        .openDrain                   = PORT_OPEN_DRAIN_DISABLED,
+        .outputBuffer                = PORT_OUTPUT_BUFFER_DISABLED,
+        .inputMuxReg                 = {
+                                         631u
+                                       },
+        .inputMux                    = { 
+                                         PORT_INPUT_MUX_ALT2,
+                                         PORT_INPUT_MUX_NO_INIT,
+                                         PORT_INPUT_MUX_NO_INIT,
+                                         PORT_INPUT_MUX_NO_INIT,
+                                         PORT_INPUT_MUX_NO_INIT,
+                                         PORT_INPUT_MUX_NO_INIT,
+                                         PORT_INPUT_MUX_NO_INIT,
+                                         PORT_INPUT_MUX_NO_INIT
+                                       },
+        .initValue                   = 2u
+    },
 };
 
 #define PORT_STOP_SEC_CONFIG_DATA_UNSPECIFIED
@@ -479,8 +518,6 @@ const Siul2_Port_Ip_UnUsedPinType g_unused_Pin[NUM_OF_UNUSED_PINS] =
     { (uint16)14, SIUL2_0_U8 },
     { (uint16)15, SIUL2_0_U8 },
     { (uint16)16, SIUL2_0_U8 },
-    { (uint16)19, SIUL2_0_U8 },
-    { (uint16)20, SIUL2_0_U8 },
     { (uint16)21, SIUL2_0_U8 },
     { (uint16)22, SIUL2_0_U8 },
     { (uint16)23, SIUL2_0_U8 },

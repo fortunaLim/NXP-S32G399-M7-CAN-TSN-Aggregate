@@ -104,7 +104,7 @@ extern "C"{
 #include "Eth_MemMap.h"
 
 /*! @brief Channel callbacks external declarations */
-extern void Eth_RxIrqCallback_SKKU(uint8 instance, uint8 channel);
+extern void Eth_RxIrqCallback(uint8 instance, uint8 channel);
 extern void Eth_TxIrqCallback(uint8 instance, uint8 channel);
 
 #define ETH_STOP_SEC_CODE
@@ -147,7 +147,7 @@ extern Gmac_Ip_StateType GMAC_0_StateStructure;
 
 
 /*! @brief The MAC address(es) of the configured controller(s) */
-static const uint8 GMAC_0_au8MacAddrPB[GMAC_MAC_ADDR_LENGTH] = { 0x00U, 0x11U, 0x22U, 0x33U, 0x44U, 0x55U };
+static const uint8 GMAC_0_au8MacAddrPB[GMAC_MAC_ADDR_LENGTH] = { 0x00U, 0x11U, 0x22U, 0x33U, 0x44U, 0x66U };
 
 /*! @brief Reception ring configuration structures */
 static const Gmac_Ip_RxRingConfigType GMAC_0_aRxRingConfigPB[1U] =
@@ -155,7 +155,7 @@ static const Gmac_Ip_RxRingConfigType GMAC_0_aRxRingConfigPB[1U] =
     /* The configuration structure for Rx Ring 0 */
     {
         /*.ringDesc = */GMAC_0_RxRing_0_DescBuffer,
-        /*.callback = */Eth_RxIrqCallback_SKKU,
+        /*.callback = */Eth_RxIrqCallback,
         /*.buffer = */GMAC_0_RxRing_0_DataBuffer,
         /*.interrupts = */(uint32)GMAC_CH_INTERRUPT_RI,
         /*.bufferLen = */512U,
@@ -179,8 +179,8 @@ static const Gmac_Ip_TxRingConfigType GMAC_0_aTxRingConfigPB[3U] =
         /*.callback = */Eth_TxIrqCallback,
         /*.buffer = */GMAC_0_TxRing_0_DataBuffer,
         /*.interrupts = */(uint32)GMAC_CH_INTERRUPT_TI,
-        /*.bufferLen = */1456U,
-        /*.ringSize = */128U,
+        /*.bufferLen = */1536U,
+        /*.ringSize = */32U,
         /*.priorityMask = */(uint8)GMAC_VLAN_PRIORITY_0,
         /*.dmaBurstLength = */64U,
         /*.queueOpMode = */GMAC_OP_MODE_DCB_GEN
@@ -196,8 +196,8 @@ static const Gmac_Ip_TxRingConfigType GMAC_0_aTxRingConfigPB[3U] =
         /*.callback = */Eth_TxIrqCallback,
         /*.buffer = */GMAC_0_TxRing_1_DataBuffer,
         /*.interrupts = */(uint32)GMAC_CH_INTERRUPT_TI,
-        /*.bufferLen = */1456U,
-        /*.ringSize = */128U,
+        /*.bufferLen = */1536U,
+        /*.ringSize = */16U,
         /*.priorityMask = */(uint8)GMAC_VLAN_PRIORITY_1,
         /*.dmaBurstLength = */64U,
         /*.queueOpMode = */GMAC_OP_MODE_DCB_GEN
@@ -213,8 +213,8 @@ static const Gmac_Ip_TxRingConfigType GMAC_0_aTxRingConfigPB[3U] =
         /*.callback = */Eth_TxIrqCallback,
         /*.buffer = */GMAC_0_TxRing_2_DataBuffer,
         /*.interrupts = */(uint32)GMAC_CH_INTERRUPT_TI,
-        /*.bufferLen = */1456U,
-        /*.ringSize = */128U,
+        /*.bufferLen = */1536U,
+        /*.ringSize = */16U,
         /*.priorityMask = */(uint8)GMAC_VLAN_PRIORITY_2,
         /*.dmaBurstLength = */64U,
         /*.queueOpMode = */GMAC_OP_MODE_DCB_GEN
@@ -248,15 +248,15 @@ static const Gmac_Ip_TxGateControl GMAC_0_GateControlListPB[4U]  =
         /*.gateControlFifo = */1U
     },
     {
-        /*.timeInterval = */5000000U,
+        /*.timeInterval = */4000000U,
         /*.gateControlFifo = */2U
     },
     {
-        /*.timeInterval = */3984000U,
+        /*.timeInterval = */4000000U,
         /*.gateControlFifo = */4U
     },
     {
-        /*.timeInterval = */16000U,
+        /*.timeInterval = */1000000U,
         /*.gateControlFifo = */0U
     }
 };

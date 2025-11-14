@@ -1,28 +1,28 @@
 stacks/tcpip/code/ports/osif/rtd/OsIf_rtd_port.o: \
  ../stacks/tcpip/code/ports/osif/rtd/OsIf_rtd_port.c \
  C:/NXP/S32DS.3.5/S32DS/software/PlatformSDK_S32XX_4_0_0/RTD/BaseNXP_TS_T40D11M40I2R0/include/Devassert.h \
- C:/Users/sh970/workspaceS32DS.3.5/lwip_FreeRTOS_S32G399A_M7/generate/include/PlatformTypes.h \
+ C:/Users/sh970/workspace_paper/lwip_FreeRTOS_S32G399A_M7_hw_ver/generate/include/PlatformTypes.h \
  C:/NXP/S32DS.3.5/S32DS/software/PlatformSDK_S32XX_4_0_0/RTD/BaseNXP_TS_T40D11M40I2R0/include/Mcal.h \
  C:/NXP/S32DS.3.5/S32DS/software/PlatformSDK_S32XX_4_0_0/RTD/BaseNXP_TS_T40D11M40I2R0/include/Compiler.h \
  C:/NXP/S32DS.3.5/S32DS/software/PlatformSDK_S32XX_4_0_0/RTD/BaseNXP_TS_T40D11M40I2R0/include/Compiler_Cfg.h \
  C:/NXP/S32DS.3.5/S32DS/software/PlatformSDK_S32XX_4_0_0/RTD/BaseNXP_TS_T40D11M40I2R0/include/CompilerDefinition.h \
  C:/NXP/S32DS.3.5/S32DS/software/PlatformSDK_S32XX_4_0_0/RTD/BaseNXP_TS_T40D11M40I2R0/include/StandardTypes.h \
  C:/NXP/S32DS.3.5/S32DS/software/PlatformSDK_S32XX_4_0_0/RTD/BaseNXP_TS_T40D11M40I2R0/include/Platform_Types.h \
- C:/Users/sh970/workspaceS32DS.3.5/lwip_FreeRTOS_S32G399A_M7/generate/include/Soc_Ips.h \
+ C:/Users/sh970/workspace_paper/lwip_FreeRTOS_S32G399A_M7_hw_ver/generate/include/Soc_Ips.h \
  C:/NXP/S32DS.3.5/S32DS/software/PlatformSDK_S32XX_4_0_0/RTD/BaseNXP_TS_T40D11M40I2R0/include/Platform_Types.h \
  C:/NXP/S32DS.3.5/S32DS/software/PlatformSDK_S32XX_4_0_0/RTD/BaseNXP_TS_T40D11M40I2R0/include/IpVersionMacros.h \
  C:/NXP/S32DS.3.5/S32DS/software/PlatformSDK_S32XX_4_0_0/RTD/BaseNXP_TS_T40D11M40I2R0/include/Reg_eSys.h \
  C:/NXP/S32DS.3.5/S32DS/software/PlatformSDK_S32XX_4_0_0/RTD/BaseNXP_TS_T40D11M40I2R0/include/OsIf_Internal.h \
- C:/Users/sh970/workspaceS32DS.3.5/lwip_FreeRTOS_S32G399A_M7/generate/include/OsIf_Cfg.h \
- C:/Users/sh970/workspaceS32DS.3.5/lwip_FreeRTOS_S32G399A_M7/generate/include/OsIf_ArchCfg.h \
+ C:/Users/sh970/workspace_paper/lwip_FreeRTOS_S32G399A_M7_hw_ver/generate/include/OsIf_Cfg.h \
+ C:/Users/sh970/workspace_paper/lwip_FreeRTOS_S32G399A_M7_hw_ver/generate/include/OsIf_ArchCfg.h \
  C:/NXP/S32DS.3.5/S32DS/software/PlatformSDK_S32XX_4_0_0/RTD/BaseNXP_TS_T40D11M40I2R0/include/StandardTypes.h \
  C:/NXP/S32DS.3.5/S32DS/software/PlatformSDK_S32XX_4_0_0/RTD/BaseNXP_TS_T40D11M40I2R0/header/S32G399A_SYSTICK.h \
  C:/NXP/S32DS.3.5/S32DS/software/PlatformSDK_S32XX_4_0_0/RTD/BaseNXP_TS_T40D11M40I2R0/header/S32G399A_COMMON.h \
- C:/Users/sh970/workspaceS32DS.3.5/lwip_FreeRTOS_S32G399A_M7/generate/include/OsIf_ArchCfg.h \
+ C:/Users/sh970/workspace_paper/lwip_FreeRTOS_S32G399A_M7_hw_ver/generate/include/OsIf_ArchCfg.h \
  C:/NXP/S32DS.3.5/S32DS/software/PlatformSDK_S32XX_4_0_0/RTD/BaseNXP_TS_T40D11M40I2R0/header/S32G399A_M7_COMMON.h \
  C:/NXP/S32DS.3.5/S32DS/software/PlatformSDK_S32XX_4_0_0/RTD/BaseNXP_TS_T40D11M40I2R0/include/BasicTypes.h \
  ../FreeRTOS/Source/include/FreeRTOS.h \
- C:/Users/sh970/workspaceS32DS.3.5/lwip_FreeRTOS_S32G399A_M7/generate/include/FreeRTOSConfig.h \
+ C:/Users/sh970/workspace_paper/lwip_FreeRTOS_S32G399A_M7_hw_ver/generate/include/FreeRTOSConfig.h \
  ../FreeRTOS/Source/include/projdefs.h \
  ../FreeRTOS/Source/include/portable.h \
  ../FreeRTOS/Source/include/deprecated_definitions.h \
@@ -38,7 +38,7 @@ stacks/tcpip/code/ports/osif/rtd/OsIf_rtd_port.o: \
 
 C:/NXP/S32DS.3.5/S32DS/software/PlatformSDK_S32XX_4_0_0/RTD/BaseNXP_TS_T40D11M40I2R0/include/Devassert.h:
 
-C:/Users/sh970/workspaceS32DS.3.5/lwip_FreeRTOS_S32G399A_M7/generate/include/PlatformTypes.h:
+C:/Users/sh970/workspace_paper/lwip_FreeRTOS_S32G399A_M7_hw_ver/generate/include/PlatformTypes.h:
 
 C:/NXP/S32DS.3.5/S32DS/software/PlatformSDK_S32XX_4_0_0/RTD/BaseNXP_TS_T40D11M40I2R0/include/Mcal.h:
 
@@ -52,7 +52,7 @@ C:/NXP/S32DS.3.5/S32DS/software/PlatformSDK_S32XX_4_0_0/RTD/BaseNXP_TS_T40D11M40
 
 C:/NXP/S32DS.3.5/S32DS/software/PlatformSDK_S32XX_4_0_0/RTD/BaseNXP_TS_T40D11M40I2R0/include/Platform_Types.h:
 
-C:/Users/sh970/workspaceS32DS.3.5/lwip_FreeRTOS_S32G399A_M7/generate/include/Soc_Ips.h:
+C:/Users/sh970/workspace_paper/lwip_FreeRTOS_S32G399A_M7_hw_ver/generate/include/Soc_Ips.h:
 
 C:/NXP/S32DS.3.5/S32DS/software/PlatformSDK_S32XX_4_0_0/RTD/BaseNXP_TS_T40D11M40I2R0/include/Platform_Types.h:
 
@@ -62,9 +62,9 @@ C:/NXP/S32DS.3.5/S32DS/software/PlatformSDK_S32XX_4_0_0/RTD/BaseNXP_TS_T40D11M40
 
 C:/NXP/S32DS.3.5/S32DS/software/PlatformSDK_S32XX_4_0_0/RTD/BaseNXP_TS_T40D11M40I2R0/include/OsIf_Internal.h:
 
-C:/Users/sh970/workspaceS32DS.3.5/lwip_FreeRTOS_S32G399A_M7/generate/include/OsIf_Cfg.h:
+C:/Users/sh970/workspace_paper/lwip_FreeRTOS_S32G399A_M7_hw_ver/generate/include/OsIf_Cfg.h:
 
-C:/Users/sh970/workspaceS32DS.3.5/lwip_FreeRTOS_S32G399A_M7/generate/include/OsIf_ArchCfg.h:
+C:/Users/sh970/workspace_paper/lwip_FreeRTOS_S32G399A_M7_hw_ver/generate/include/OsIf_ArchCfg.h:
 
 C:/NXP/S32DS.3.5/S32DS/software/PlatformSDK_S32XX_4_0_0/RTD/BaseNXP_TS_T40D11M40I2R0/include/StandardTypes.h:
 
@@ -72,7 +72,7 @@ C:/NXP/S32DS.3.5/S32DS/software/PlatformSDK_S32XX_4_0_0/RTD/BaseNXP_TS_T40D11M40
 
 C:/NXP/S32DS.3.5/S32DS/software/PlatformSDK_S32XX_4_0_0/RTD/BaseNXP_TS_T40D11M40I2R0/header/S32G399A_COMMON.h:
 
-C:/Users/sh970/workspaceS32DS.3.5/lwip_FreeRTOS_S32G399A_M7/generate/include/OsIf_ArchCfg.h:
+C:/Users/sh970/workspace_paper/lwip_FreeRTOS_S32G399A_M7_hw_ver/generate/include/OsIf_ArchCfg.h:
 
 C:/NXP/S32DS.3.5/S32DS/software/PlatformSDK_S32XX_4_0_0/RTD/BaseNXP_TS_T40D11M40I2R0/header/S32G399A_M7_COMMON.h:
 
@@ -80,7 +80,7 @@ C:/NXP/S32DS.3.5/S32DS/software/PlatformSDK_S32XX_4_0_0/RTD/BaseNXP_TS_T40D11M40
 
 ../FreeRTOS/Source/include/FreeRTOS.h:
 
-C:/Users/sh970/workspaceS32DS.3.5/lwip_FreeRTOS_S32G399A_M7/generate/include/FreeRTOSConfig.h:
+C:/Users/sh970/workspace_paper/lwip_FreeRTOS_S32G399A_M7_hw_ver/generate/include/FreeRTOSConfig.h:
 
 ../FreeRTOS/Source/include/projdefs.h:
 

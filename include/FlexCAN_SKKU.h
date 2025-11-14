@@ -45,9 +45,12 @@ void ETH_Traffic_Send( void *pvParameters );
 void CAN_ReceiveTask( void *pvParameters );
 void ETH_PDU_Send( void *pvParameters );
 
+void TAS_HW_Init(void);
+
 void start_CAN();
 void CAN0_Callback_SKKU(uint8 instance, Flexcan_Ip_EventType eventType,
                   uint32 buffIdx, const Flexcan_Ip_StateType * flexcanState);
-
+void CAN1_Callback_SKKU(uint8 instance, Flexcan_Ip_EventType eventType,
+                  uint32 buffIdx, const Flexcan_Ip_StateType * flexcanState);
 
 #endif /* FLEXCAN_SKKU_H_ */

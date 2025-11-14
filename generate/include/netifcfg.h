@@ -66,13 +66,13 @@ typedef struct {
 #define GMAC_RXBD_NUM      256
 
 /* Number of buffer descriptors for Tx ring */
-#define GMAC_TXBD_NUM      128
+#define GMAC_TXBD_NUM      32
 
 /* Buffer length for Rx */
 #define GMAC_MAX_RXBUFFLEN_SUPPORTED      512
 
 /* Buffer length for Tx */
-#define GMAC_MAX_TXBUFFLEN_SUPPORTED      1456
+#define GMAC_MAX_TXBUFFLEN_SUPPORTED      1536
 
 /* Network interfaces configuration */
 extern netif_custom_t *netif_cfg[ETHIF_NUMBER];

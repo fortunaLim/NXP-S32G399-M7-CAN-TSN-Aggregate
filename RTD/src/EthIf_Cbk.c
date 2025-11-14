@@ -179,7 +179,6 @@ void EthIf_TxConfirmation(uint8 CtrlIdx, \
     ++EthIf_TxConfirmations[CtrlIdx];
     (void)BufIdx;
     (void)Result;
-
 }
 
 /*================================================================================================*/

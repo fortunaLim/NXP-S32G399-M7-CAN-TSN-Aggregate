@@ -108,7 +108,7 @@ extern "C"{
 /*! @brief Definitions for BOARD_InitPins Functional Group */
 
 /*! @brief User number of configured pins */
-#define NUM_OF_CONFIGURED_PINS0 18
+#define NUM_OF_CONFIGURED_PINS0 20
 
 #define PORT_START_SEC_CONFIG_DATA_UNSPECIFIED
 #include "Port_MemMap.h"
@@ -126,7 +126,7 @@ extern const Siul2_Port_Ip_PinSettingsConfig g_pin_mux_InitConfigArr0[NUM_OF_CON
 #include "Port_MemMap.h"
 
 /*! @brief User number of configured unused pins */
-#define NUM_OF_UNUSED_PINS 139
+#define NUM_OF_UNUSED_PINS 137
 /*! @brief User unused pin configuration structure */
 extern const Siul2_Port_Ip_UnUsedPinType g_unused_Pin[NUM_OF_UNUSED_PINS];
 

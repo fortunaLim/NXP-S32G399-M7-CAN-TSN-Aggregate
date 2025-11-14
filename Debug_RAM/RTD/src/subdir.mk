@@ -4,8 +4,6 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../RTD/src/Cache_Ip.c \
-../RTD/src/Cache_Ip_HwAcc_ArmCoreMx.c \
 ../RTD/src/Clock_Ip.c \
 ../RTD/src/Clock_Ip_Data.c \
 ../RTD/src/Clock_Ip_Data1.c \
@@ -63,15 +61,12 @@ C_SRCS += \
 ../RTD/src/SchM_Can.c \
 ../RTD/src/SchM_Dio.c \
 ../RTD/src/SchM_Eth.c \
-../RTD/src/SchM_Mcl.c \
 ../RTD/src/SchM_Mcu.c \
 ../RTD/src/SchM_Port.c \
 ../RTD/src/Siul2_Dio_Ip.c \
 ../RTD/src/Siul2_Port_Ip.c 
 
 OBJS += \
-./RTD/src/Cache_Ip.o \
-./RTD/src/Cache_Ip_HwAcc_ArmCoreMx.o \
 ./RTD/src/Clock_Ip.o \
 ./RTD/src/Clock_Ip_Data.o \
 ./RTD/src/Clock_Ip_Data1.o \
@@ -129,15 +124,12 @@ OBJS += \
 ./RTD/src/SchM_Can.o \
 ./RTD/src/SchM_Dio.o \
 ./RTD/src/SchM_Eth.o \
-./RTD/src/SchM_Mcl.o \
 ./RTD/src/SchM_Mcu.o \
 ./RTD/src/SchM_Port.o \
 ./RTD/src/Siul2_Dio_Ip.o \
 ./RTD/src/Siul2_Port_Ip.o 
 
 C_DEPS += \
-./RTD/src/Cache_Ip.d \
-./RTD/src/Cache_Ip_HwAcc_ArmCoreMx.d \
 ./RTD/src/Clock_Ip.d \
 ./RTD/src/Clock_Ip_Data.d \
 ./RTD/src/Clock_Ip_Data1.d \
@@ -195,7 +187,6 @@ C_DEPS += \
 ./RTD/src/SchM_Can.d \
 ./RTD/src/SchM_Dio.d \
 ./RTD/src/SchM_Eth.d \
-./RTD/src/SchM_Mcl.d \
 ./RTD/src/SchM_Mcu.d \
 ./RTD/src/SchM_Port.d \
 ./RTD/src/Siul2_Dio_Ip.d \
@@ -206,7 +197,7 @@ C_DEPS += \
 RTD/src/%.o: ../RTD/src/%.c
 	@echo 'Building file: $<'
 	@echo 'Invoking: Standard S32DS C Compiler'
-	arm-none-eabi-gcc "@RTD/src/Cache_Ip.args" -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" -o "$@" "$<"
+	arm-none-eabi-gcc "@RTD/src/Clock_Ip.args" -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 

@@ -60,23 +60,23 @@ endif
 
 # Add inputs and outputs from these tool invocations to the build variables 
 SECONDARY_SIZE += \
-lwip_FreeRTOS_S32G399A_M7.siz \
+lwip_FreeRTOS_S32G399A_M7_hw_ver.siz \
 
 
 # All Target
-all: lwip_FreeRTOS_S32G399A_M7.elf secondary-outputs
+all: lwip_FreeRTOS_S32G399A_M7_hw_ver.elf secondary-outputs
 
 # Tool invocations
-lwip_FreeRTOS_S32G399A_M7.elf: $(OBJS) C:/Users/sh970/workspaceS32DS.3.5/lwip_FreeRTOS_S32G399A_M7/Project_Settings/Linker_Files/linker_ram_s32g3xx.ld $(USER_OBJS)
+lwip_FreeRTOS_S32G399A_M7_hw_ver.elf: $(OBJS) C:/Users/sh970/workspace_paper/lwip_FreeRTOS_S32G399A_M7_hw_ver/Project_Settings/Linker_Files/linker_ram_s32g3xx.ld $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: Standard S32DS C Linker'
-	arm-none-eabi-gcc -o "lwip_FreeRTOS_S32G399A_M7.elf" "@lwip_FreeRTOS_S32G399A_M7.args"  $(USER_OBJS)
+	arm-none-eabi-gcc -o "lwip_FreeRTOS_S32G399A_M7_hw_ver.elf" "@lwip_FreeRTOS_S32G399A_M7_hw_ver.args"  $(USER_OBJS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
-lwip_FreeRTOS_S32G399A_M7.siz: lwip_FreeRTOS_S32G399A_M7.elf
+lwip_FreeRTOS_S32G399A_M7_hw_ver.siz: lwip_FreeRTOS_S32G399A_M7_hw_ver.elf
 	@echo 'Invoking: Standard S32DS Print Size'
-	arm-none-eabi-size --format=berkeley lwip_FreeRTOS_S32G399A_M7.elf
+	arm-none-eabi-size --format=berkeley lwip_FreeRTOS_S32G399A_M7_hw_ver.elf
 	@echo 'Finished building: $@'
 	@echo ' '
 

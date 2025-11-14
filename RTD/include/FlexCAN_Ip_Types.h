@@ -342,7 +342,7 @@ typedef enum
     FLEXCAN_STATUS_ERROR = E_NOT_OK,         /**< Error Operation Completed */
     FLEXCAN_STATUS_BUSY,                     /**< Busy Operation Completed */
     FLEXCAN_STATUS_TIMEOUT,                  /**< TimeOut Operation Completed */
-    FLEXCAN_STATUS_BUFF_OUT_OF_RANGE,        /**< f specified MB index is out of the configurable range */
+    FLEXCAN_STATUS_BUFF_OUT_OF_RANGE,        /**< The specified MB index is out of the configurable range */
     FLEXCAN_STATUS_NO_TRANSFER_IN_PROGRESS,  /**< There is no transmission or reception in progress */
 } Flexcan_Ip_StatusType;
 
